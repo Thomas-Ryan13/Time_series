@@ -6,4 +6,3 @@ xgboost
 streamlit
 plotly
 sklearn
-random
