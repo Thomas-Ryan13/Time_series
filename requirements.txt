@@ -1,11 +1,10 @@
 matplotlib
-matplotlib.pyplot
 numpy
 pandas
 datetime
 xgboost
 streamlit
-plotly.graph_objects
-sklearn.metrics
+plotly
+sklearn
 math
 random
