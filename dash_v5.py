@@ -8,9 +8,15 @@ from datetime import date
 import xgboost as xgb
 import streamlit as st
 import plotly.graph_objects as go
-from sklearn.metrics import mean_squared_error
 from math import sqrt
 import random
+
+def mse(actual, predicted):
+    actual = np.array(actual)
+    predicted = np.array(predicted)
+    differences = np.subract(actual, predicted)
+    squared_differences = np.square(differences)
+    return squared_differences.mean()
 
 # Get today's date
 date_run = str(pd.to_datetime("now").date())
@@ -135,7 +141,7 @@ last30_df.plot(ax=ax2, title = 'Forecasted VS Actual Prices Last 90 Days')
 ### RMSE
 prediction = last30_df['Prediction']
 actual = last30_df['Day-ahead Price (EUR/MWh)']
-rmse = sqrt(mean_squared_error(actual, prediction))
+rmse = sqrt(mse(actual, prediction))
 rmse = round(rmse, 2)
 
 ## Plot historic and forecasted prices together
