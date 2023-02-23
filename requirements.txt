@@ -6,5 +6,4 @@ xgboost
 streamlit
 plotly
 sklearn
-math
 random
