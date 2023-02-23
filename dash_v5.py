@@ -5,7 +5,6 @@ from matplotlib import dates
 import numpy as np
 import pandas as pd
 from datetime import date
-import sklearn
 import xgboost as xgb
 import streamlit as st
 import plotly.graph_objects as go
